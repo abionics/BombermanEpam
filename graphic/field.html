@@ -1,0 +1,600 @@
+<html>
+<head>
+    <meta http-equiv="refresh" content="0.9; URL=field.html">
+    <title>Bomberman GUI</title></head>
+    <style>td {
+    position: relative;
+    vertical-align: middle;
+    line-height: 200%;
+    text-align: center;
+}
+
+.cell:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.c_example::before {
+    content: "1";
+    background: blue;
+    opacity: 0.3;
+}
+.c122::before { background: orange;;
+opacity: 0.3;;
+content: "5"; }
+.c145::before { background: orange;;
+opacity: 0.3;;
+content: "4"; }
+.c166::before { background: orange;;
+opacity: 0.3;;
+content: "5"; }
+.c167::before { background: orange;;
+opacity: 0.3;;
+content: "4"; }
+.c168::before { background: orange;;
+opacity: 0.3;;
+content: "3"; }
+.c191::before { background: orange;;
+opacity: 0.3;;
+content: "2"; }
+.c212::before { background: orange;;
+opacity: 0.3;;
+content: "1"; }
+.c214::before { background: orange;;
+opacity: 0.3;;
+content: "1"; }
+.c235::before { background: orange;;
+opacity: 0.3;;
+content: "2"; }
+.c237::before { background: orange;;
+opacity: 0.3;;
+content: "2"; }
+.c256::before { background: orange;;
+opacity: 0.3;;
+content: "5"; }
+.c257::before { background: orange;;
+opacity: 0.3;;
+content: "4"; }
+.c258::before { background: orange;;
+opacity: 0.3;;
+content: "3"; }
+.c259::before { background: orange;;
+opacity: 0.3;;
+content: "4"; }
+</style>
+<body>
+    <table cellspacing="0" cellpadding="0">
+        <tr><td><div class="cell c0"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c1"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c2"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c3"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c4"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c5"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c6"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c7"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c8"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c9"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c10"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c11"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c12"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c13"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c14"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c15"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c16"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c17"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c18"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c19"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c20"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c21"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c22"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c23"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c24"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c25"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c26"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c27"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c28"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c29"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c30"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c31"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c32"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c33"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c34"><img src="../sprites/bomb_count_increase.png" alt=bomb_count_increase width="30"></div>
+</td><td><div class="cell c35"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c36"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c37"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c38"><img src="../sprites/bomb_blast_radius_increase.png" alt=bomb_blast_radius_increase width="30"></div>
+</td><td><div class="cell c39"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c40"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c41"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c42"><img src="../sprites/bomb_count_increase.png" alt=bomb_count_increase width="30"></div>
+</td><td><div class="cell c43"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c44"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c45"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c46"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c47"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c48"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c49"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c50"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c51"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c52"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c53"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c54"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c55"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c56"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c57"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c58"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c59"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c60"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c61"><img src="../sprites/bomb_immune.png" alt=bomb_immune width="30"></div>
+</td><td><div class="cell c62"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c63"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c64"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c65"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c66"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c67"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c68"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c69"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c70"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c71"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c72"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c73"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c74"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c75"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c76"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c77"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c78"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c79"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c80"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c81"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c82"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c83"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c84"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c85"><img src="../sprites/bomb_remote_control.png" alt=bomb_remote_control width="30"></div>
+</td><td><div class="cell c86"><img src="../sprites/meat_chopper.png" alt=meat_chopper width="30"></div>
+</td><td><div class="cell c87"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c88"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c89"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c90"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c91"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c92"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c93"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c94"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c95"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c96"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c97"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c98"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c99"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c100"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c101"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c102"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c103"><img src="../sprites/bomb_remote_control.png" alt=bomb_remote_control width="30"></div>
+</td><td><div class="cell c104"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c105"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c106"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c107"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c108"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c109"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c110"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c111"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c112"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c113"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c114"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c115"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c116"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c117"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c118"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c119"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c120"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c121"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c122"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c123"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c124"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c125"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c126"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c127"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c128"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c129"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c130"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c131"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c132"><img src="../sprites/bomb_count_increase.png" alt=bomb_count_increase width="30"></div>
+</td><td><div class="cell c133"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c134"><img src="../sprites/bomb_count_increase.png" alt=bomb_count_increase width="30"></div>
+</td><td><div class="cell c135"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c136"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c137"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c138"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c139"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c140"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c141"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c142"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c143"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c144"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c145"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c146"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c147"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c148"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c149"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c150"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c151"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c152"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c153"><img src="../sprites/meat_chopper.png" alt=meat_chopper width="30"></div>
+</td><td><div class="cell c154"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c155"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c156"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c157"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c158"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c159"><img src="../sprites/bomb_immune.png" alt=bomb_immune width="30"></div>
+</td><td><div class="cell c160"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c161"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c162"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c163"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c164"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c165"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c166"><img src="../sprites/meat_chopper.png" alt=meat_chopper width="30"></div>
+</td><td><div class="cell c167"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c168"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c169"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c170"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c171"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c172"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c173"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c174"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c175"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c176"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c177"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c178"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c179"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c180"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c181"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c182"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c183"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c184"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c185"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c186"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c187"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c188"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c189"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c190"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c191"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c192"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c193"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c194"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c195"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c196"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c197"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c198"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c199"><img src="../sprites/bomb_count_increase.png" alt=bomb_count_increase width="30"></div>
+</td><td><div class="cell c200"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c201"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c202"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c203"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c204"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c205"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c206"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c207"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c208"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c209"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c210"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c211"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c212"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c213"><img src="../sprites/bomberman.png" alt=bomberman width="30"></div>
+</td><td><div class="cell c214"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c215"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c216"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c217"><img src="../sprites/bomb_immune.png" alt=bomb_immune width="30"></div>
+</td><td><div class="cell c218"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c219"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c220"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c221"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c222"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c223"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c224"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c225"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c226"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c227"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c228"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c229"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c230"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c231"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c232"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c233"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c234"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c235"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c236"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c237"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c238"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c239"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c240"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c241"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c242"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c243"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c244"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c245"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c246"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c247"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c248"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c249"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c250"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c251"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c252"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c253"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c254"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c255"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c256"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c257"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c258"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c259"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c260"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c261"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c262"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c263"><img src="../sprites/bomb_immune.png" alt=bomb_immune width="30"></div>
+</td><td><div class="cell c264"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c265"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c266"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c267"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c268"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c269"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c270"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c271"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c272"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c273"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c274"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c275"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c276"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c277"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c278"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c279"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c280"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c281"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c282"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c283"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c284"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c285"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c286"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c287"><img src="../sprites/bomb_blast_radius_increase.png" alt=bomb_blast_radius_increase width="30"></div>
+</td><td><div class="cell c288"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c289"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c290"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c291"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c292"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c293"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c294"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c295"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c296"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c297"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c298"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c299"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c300"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c301"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c302"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c303"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c304"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c305"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c306"><img src="../sprites/meat_chopper.png" alt=meat_chopper width="30"></div>
+</td><td><div class="cell c307"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c308"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c309"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c310"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c311"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c312"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c313"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c314"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c315"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c316"><img src="../sprites/bomb_immune.png" alt=bomb_immune width="30"></div>
+</td><td><div class="cell c317"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c318"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c319"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c320"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c321"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c322"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c323"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c324"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c325"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c326"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c327"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c328"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c329"><img src="../sprites/other_bomb_bomberman.png" alt=other_bomb_bomberman width="30"></div>
+</td><td><div class="cell c330"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c331"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c332"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c333"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c334"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c335"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c336"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c337"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c338"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c339"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c340"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c341"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c342"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c343"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c344"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c345"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c346"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c347"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c348"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c349"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c350"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c351"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c352"><img src="../sprites/bomb_remote_control.png" alt=bomb_remote_control width="30"></div>
+</td><td><div class="cell c353"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c354"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c355"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c356"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c357"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c358"><img src="../sprites/meat_chopper.png" alt=meat_chopper width="30"></div>
+</td><td><div class="cell c359"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c360"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c361"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c362"><img src="../sprites/bomb_immune.png" alt=bomb_immune width="30"></div>
+</td><td><div class="cell c363"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c364"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c365"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c366"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c367"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c368"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c369"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c370"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c371"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c372"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c373"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c374"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c375"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c376"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c377"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c378"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c379"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c380"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c381"><img src="../sprites/bomb_remote_control.png" alt=bomb_remote_control width="30"></div>
+</td><td><div class="cell c382"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c383"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c384"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c385"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c386"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c387"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c388"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c389"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c390"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c391"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c392"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c393"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c394"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c395"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c396"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c397"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c398"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c399"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c400"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c401"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c402"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c403"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c404"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c405"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c406"><img src="../sprites/bomb_blast_radius_increase.png" alt=bomb_blast_radius_increase width="30"></div>
+</td><td><div class="cell c407"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c408"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c409"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c410"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c411"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c412"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c413"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c414"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c415"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c416"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c417"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c418"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c419"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c420"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c421"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c422"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c423"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c424"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c425"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c426"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c427"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c428"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c429"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c430"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c431"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c432"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c433"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c434"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c435"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c436"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c437"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c438"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c439"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c440"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c441"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c442"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c443"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c444"><img src="../sprites/bomb_remote_control.png" alt=bomb_remote_control width="30"></div>
+</td><td><div class="cell c445"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c446"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c447"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c448"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c449"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c450"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c451"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c452"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c453"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c454"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c455"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c456"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c457"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c458"><img src="../sprites/bomb_remote_control.png" alt=bomb_remote_control width="30"></div>
+</td><td><div class="cell c459"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c460"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c461"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c462"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c463"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c464"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c465"><img src="../sprites/bomb_count_increase.png" alt=bomb_count_increase width="30"></div>
+</td><td><div class="cell c466"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c467"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c468"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c469"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c470"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c471"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c472"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c473"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c474"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c475"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c476"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c477"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c478"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c479"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c480"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c481"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c482"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c483"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c484"><img src="../sprites/bomb_blast_radius_increase.png" alt=bomb_blast_radius_increase width="30"></div>
+</td><td><div class="cell c485"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c486"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c487"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c488"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c489"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c490"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c491"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c492"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c493"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c494"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c495"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c496"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c497"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c498"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c499"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c500"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c501"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c502"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c503"><img src="../sprites/none.png" alt=none width="30"></div>
+</td><td><div class="cell c504"><img src="../sprites/destroy_wall.png" alt=destroy_wall width="30"></div>
+</td><td><div class="cell c505"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr><tr><td><div class="cell c506"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c507"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c508"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c509"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c510"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c511"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c512"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c513"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c514"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c515"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c516"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c517"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c518"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c519"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c520"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c521"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c522"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c523"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c524"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c525"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c526"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c527"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td><td><div class="cell c528"><img src="../sprites/wall.png" alt=wall width="30"></div>
+</td></tr>
+    </table>
+</body>
+</html>
