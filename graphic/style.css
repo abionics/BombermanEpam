@@ -9,6 +9,7 @@ td {
     width: 100%;
     height: 100%;
     position: absolute;
+    color: white;
 }
 
 .c_example::before {

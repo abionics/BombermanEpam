@@ -30,7 +30,7 @@ from core.web.websocket import WebSocketApp
 
 def _on_open(webclient):
     print("Opened Connection.\nSending <NULL> command...")
-    webclient.send('NULL')
+    # webclient.send('NULL')
 
 
 def _on_message(webclient, message):

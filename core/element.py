@@ -24,7 +24,37 @@
 
 from argparse import ArgumentError
 
-_ELEMENTS = dict(
+
+class Element:
+    """ Class describes the Element objects for Bomberman game."""
+
+    def __init__(self, name_or_char):
+        """ Construct an Element object from given name or char."""
+        for name, char in ELEMENTS_DATA.items():
+            if name_or_char == name or name_or_char == char:
+                self.name = name
+                self.char = char
+                break
+        else:
+            raise ArgumentError("No such Element: {}".format(name_or_char))
+
+    def __eq__(self, other):
+        return self.name == other.name and self.char == other.char
+
+    def __hash__(self):
+        return hash(self.char)
+
+    @staticmethod
+    def value_of(char):
+        """ Test whether the char is valid Element and return it's name."""
+        for name, c in ELEMENTS_DATA.items():
+            if char == c:
+                return name
+        else:
+            raise ArgumentError("No such Element: {}".format(char))
+
+
+ELEMENTS_DATA = dict(
     # The Bomberman
     BOMBERMAN=b'\xe2\x98\xba'.decode(),  # encoded '☺' char
     BOMB_BOMBERMAN=b'\xe2\x98\xbb'.decode(),  # encoded '☻' char
@@ -56,37 +86,7 @@ _ELEMENTS = dict(
     NONE=' '
 )
 
-
-def value_of(char):
-    """ Test whether the char is valid Element and return it's name."""
-    for value, c in _ELEMENTS.items():
-        if char == c:
-            return value
-    else:
-        raise ArgumentError("No such Element: {}".format(char))
-
-
-class Element:
-    """ Class describes the Element objects for Bomberman game."""
-
-    def __init__(self, n_or_c):
-        """ Construct an Element object from given name or char."""
-        for n, c in _ELEMENTS.items():
-            if n_or_c == n or n_or_c == c:
-                self._name = n
-                self._char = c
-                break
-        else:
-            raise ArgumentError("No such Element: {}".format(n_or_c))
-
-    def get_char(self):
-        """ Return the Element's character."""
-        return self._char
-
-    def __eq__(self, otherElement):
-        return (self._name == otherElement._name and
-                self._char == otherElement._char)
-
+ELEMENTS = [Element(char) for char in ELEMENTS_DATA.values()]
 
 if __name__ == '__main__':
     raise RuntimeError("This module is not intended to be ran from CLI")

@@ -45,7 +45,10 @@ def main():
 
     # substitute following link with the one you've copied in your browser after registration
     # url = "https://botchallenge.cloud.epam.com/codenjoy-contest/board/player/4yvrb5xa2u78prdqjq6s?code=1896417313009904871"
-    url = 'http://144.91.91.85:8080/codenjoy-contest/board/player/user_id?code=12345678901234567890'
+    # url = 'http://144.91.91.85:8080/codenjoy-contest/board/player/user_id?code=12345678901234567890'
+    # url = "http://bomberman.coders.in.ua:8081/codenjoy-contest/board/player/anyidofbot?code=12345678901234567890"
+    # url = 'http://127.0.0.1:8080/codenjoy-contest/board/player/user_id?code=12345678901234567890'
+    url = 'https://botchallenge.cloud.epam.com/codenjoy-contest/board/player/4yvrb5xa2u78prdqjq6s?code=1896417313009904871'
     direction_solver = DirectionSolver()
 
     wcl = WebClient(url=get_url_for_ws(url), solver=direction_solver)
